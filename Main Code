@@ -21,13 +21,19 @@ while True:
                 print(item)
             print("\n\n")
         elif selection == "2":
+            print (orders[0], "is ready for pickup!\n")
             if orders:
                 orders.pop(0)
-                print("Current Orders:")
-                for item in orders:
-                    print(item)
+                if len(orders) == 0:
+                    print("All orders have been picked up.\n")
+                else:
+                    print("Current Orders:")
+                    for item in orders:
+                        print(item)
             else:
                 print("No orders to pick up.")
+        elif selection != "1" and selection != "2" and len(orders) == 0:
+            print("No current orders.\n")
         else:
             print("Current Orders:")
             for item in orders:
