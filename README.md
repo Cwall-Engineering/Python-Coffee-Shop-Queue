@@ -1,1 +1,1 @@
-# Python-Coffee-Shop-Queue
+This program allows the user to place an order by entering their name and the item that they would like to order. Then, the program could take another order, serve the order that has already been taken, or print the queue as is.
