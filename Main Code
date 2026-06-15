@@ -1,0 +1,35 @@
+orders = []
+while True:
+        selection = input("Would you like to place an order? (enter 1 to place an order or 2 to pick up an order, any other input will view current orders): \n")
+        if selection == "1":
+            name = input ("What is the name for the order? \n")
+            order = input ("Here is our menu, what would you like to order? \n 1. Black Coffee \n 2. Latte \n 3. Cappuccino \n 4. Espresso \n 5. Americano \n")
+            if order == "1":
+                orders.append(name + " - Black Coffee")
+            elif order == "2":
+                orders.append(name + " - Latte")
+            elif order == "3":
+                orders.append(name + " - Cappuccino")
+            elif order == "4":
+                orders.append(name + " - Espresso")
+            elif order == "5":
+                orders.append(name + " - Americano")
+            else:
+                print("Invalid menu choice. No order added.\n")
+            print("Current Orders:")
+            for item in orders:
+                print(item)
+            print("\n\n")
+        elif selection == "2":
+            if orders:
+                orders.pop(0)
+                print("Current Orders:")
+                for item in orders:
+                    print(item)
+            else:
+                print("No orders to pick up.")
+        else:
+            print("Current Orders:")
+            for item in orders:
+                print(item)
+            print("\n\n")
