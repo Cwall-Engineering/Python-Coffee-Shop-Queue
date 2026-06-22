@@ -1,7 +1,10 @@
+#Creates the list of orders
 orders = []
 while True:
+        #Allows the user to place an order, pick up an order, or view current orders
         selection = input("Would you like to place an order? (enter 1 to place an order or 2 to pick up an order, any other input will view current orders): \n")
         if selection == "1":
+            #Takes the customer's name and order, adds it to the list of orders, and prints the current orders
             name = input ("What is the name for the order? \n")
             order = input ("Here is our menu, what would you like to order? \n 1. Black Coffee \n 2. Latte \n 3. Cappuccino \n 4. Espresso \n 5. Americano \n")
             if order == "1":
@@ -20,6 +23,7 @@ while True:
             for item in orders:
                 print(item)
             print("\n\n")
+        #If the user selects 2, the order will be picked up and removed from the list
         elif selection == "2":
             print (orders[0], "is ready for pickup!\n")
             if orders:
@@ -30,10 +34,12 @@ while True:
                     print("Current Orders:")
                     for item in orders:
                         print(item)
+            #If no orders are in the list, it will print that there are no orders to pick up
             else:
                 print("No orders to pick up.")
         elif selection != "1" and selection != "2" and len(orders) == 0:
             print("No current orders.\n")
+        #If the user selects any other input, it will print the current orders. If there are no orders, it will print that there are no current orders.
         else:
             print("Current Orders:")
             for item in orders:
